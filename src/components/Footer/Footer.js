@@ -6,14 +6,14 @@ const Footer = () => {
     return (
       <div>
         <footer className="footer footer-center p-5 bg-base-200 text-base-content rounded">
-          <div className="grid grid-flow-col gap-4">
+          <div className="grid grid-flow-col gap-4 h-0">
             <Link className="link link-hover">About us</Link>
             <Link className="link link-hover">Contact</Link>
             <Link className="link link-hover">Jobs</Link>
             <Link className="link link-hover">Press kit</Link>
           </div>
           <div>
-            <div className="grid grid-flow-col gap-4">
+            <div className="grid grid-flow-col gap-5 h-0">
               <Link>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

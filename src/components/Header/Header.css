@@ -1,0 +1,12 @@
+.nav a:hover{
+    color:rgb(28, 164, 209);
+}
+.nav a{
+    font-size: 20px;
+    font-weight: 600;
+}
+.nav a.active{
+    /* color: blue; */
+   color: rgb(28, 164, 209);
+   border-bottom: 2px solid rgb(28, 164, 209);
+}

@@ -18,14 +18,14 @@ const Home = () => {
             learning can open doors that would otherwise remain closed.
           </h2>
           <Link to="/courses">
-            <button className="btn btn-wide bg-slate-800 mt-5 text-white">
+            <button className="btn btn-wide bg-slate-800 my-5 text-white">
               Visit our courses
             </button>
           </Link>
         </div>
         <div>
           <Lottie
-            className="lottie"
+            className="lottie "
             animationData={reader}
             loop={true}
           ></Lottie>
