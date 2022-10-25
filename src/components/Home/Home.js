@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import Lottie from 'lottie-react'
 import reader from '../../reading-boy.json'
+import { Link } from 'react-router-dom';
 const Home = () => {
     return (
       <div className="home">
@@ -16,6 +17,11 @@ const Home = () => {
             here and abroad who lack access to good, in-person education, online
             learning can open doors that would otherwise remain closed.
           </h2>
+          <Link to="/courses">
+            <button className="btn btn-wide bg-slate-800 mt-5 text-white">
+              Visit our courses
+            </button>
+          </Link>
         </div>
         <div>
           <Lottie
