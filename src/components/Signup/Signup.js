@@ -1,10 +1,59 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Context/UserContext";
+
 
 const Signup = () => {
+  const { createUser, userProfile } = useContext(AuthContext);
+  const [error, setError] = useState('')
+ 
+  const handleSubmit =(event) =>{
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+    .then(result =>{
+      const user = result.user;
+      console.log(user);
+      form.reset();
+      Swal.fire("Good job!", "You have successfully signed up", "success");
+      setError('')
+      handleProfile(name, photoURL);
+    })
+    .catch(e =>{
+      console.error(e);
+      const errorMessage = e.message;
+      setError(errorMessage);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `${error}`,
+      });
+    })
+
+    const handleProfile = (name, photoURL) =>{
+      const profile = { displayName: name,
+        photoURL: photoURL
+      };
+
+      userProfile(profile);
+    }
+
+
+
+
+
+    
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="hero min-h-screen">
           <div className="hero-content flex-col">
             <div className="text-center lg:text-left">
@@ -23,7 +72,7 @@ const Signup = () => {
                     placeholder="name"
                     name="name"
                     className="input input-bordered"
-                    required
+                    // required
                   />
                 </div>
                 <div className="form-control">
@@ -35,7 +84,7 @@ const Signup = () => {
                     placeholder="photo URL"
                     name="photoURL"
                     className="input input-bordered"
-                    required
+                    // required
                   />
                 </div>
                 <div className="form-control">
@@ -56,7 +105,7 @@ const Signup = () => {
                   </label>
                   <input
                     type="password"
-                    placeholder="******"
+                    placeholder="********"
                     className="input input-bordered"
                     name="password"
                     required
