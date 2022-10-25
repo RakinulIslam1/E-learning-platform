@@ -35,9 +35,9 @@ const Header = () => {
               Smart learners
             </span>
           </div>
-          <div className="flex ml-5 lg:hidden">
+          <div className="flex ml-5 lg:hidden items-center">
             <span>
-              <img className="photo" src={user?.photoURL} alt="" />
+              <img className="photo rounded-lg" src={user?.photoURL} alt="" />
             </span>
             <span className="ml-2">{user?.displayName}</span>
           </div>
@@ -54,6 +54,12 @@ const Header = () => {
           </div>
 
           <ul class="flex items-center hidden space-x-8 lg:flex">
+            <div className="flex ml-5 sm:hidden lg:flex items-center">
+              <span>
+                <img className="photo rounded-lg" src={user?.photoURL} alt="" />
+              </span>
+              <span className="ml-2">{user?.displayName}</span>
+            </div>
             <li>
               <NavLink
                 to="/home"
@@ -94,12 +100,12 @@ const Header = () => {
               </Link>
             )}
 
-            <div className="flex ml-5 sm:hidden lg:flex">
+            {/* <div className="flex ml-5 sm:hidden lg:flex">
               <span>
                 <img className="photo" src={user?.photoURL} alt="" />
               </span>
               <span className="ml-2">{user?.displayName}</span>
-            </div>
+            </div> */}
 
             <input type="checkbox" className="toggle bg-white" />
           </ul>

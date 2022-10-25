@@ -72,7 +72,7 @@ const Signup = () => {
                     placeholder="name"
                     name="name"
                     className="input input-bordered"
-                    // required
+                    required
                   />
                 </div>
                 <div className="form-control">
@@ -84,7 +84,7 @@ const Signup = () => {
                     placeholder="photo URL"
                     name="photoURL"
                     className="input input-bordered"
-                    // required
+                    required
                   />
                 </div>
                 <div className="form-control">
