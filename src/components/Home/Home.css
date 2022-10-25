@@ -1,0 +1,9 @@
+.lottie{
+   width: 80%;
+   
+}
+.home{
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    align-items: center;
+}
