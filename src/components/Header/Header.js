@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Context/UserContext';
 import './Header.css';
 
 const Header = () => {
-   
      const [isMenuOpen, setIsMenuOpen] = useState(false);
+     const { user } = useContext(AuthContext);
 
+
+     
      return (
        <div class="bg-gray-900 nav">
          <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
            <div class="relative flex items-center justify-between">
              <div
-              
                aria-label="Company"
                title="Smart learners"
                class="inline-flex items-center"
@@ -66,6 +68,7 @@ const Header = () => {
                    FAQ
                  </NavLink>
                </li>
+
                <li>
                  <NavLink
                    to="/login"
@@ -76,6 +79,8 @@ const Header = () => {
                    Login
                  </NavLink>
                </li>
+
+               <span>{user?.displayName}</span>
                <input type="checkbox" className="toggle bg-white" />
              </ul>
              <div class="lg:hidden">
