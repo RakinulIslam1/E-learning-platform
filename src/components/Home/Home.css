@@ -6,4 +6,5 @@
     display: grid;
     grid-template-columns: 6fr 6fr;
     align-items: center;
+    margin: 20px;
 }

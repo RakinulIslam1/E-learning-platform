@@ -35,21 +35,20 @@ const Login = () => {
                       name="password"
                       required
                     />
-                    <label className="label">
-                      <Link
-                        to="/signup"
-                        className="label-text-alt link link-hover"
-                      >
-                        Dont't have an account please register?
-                      </Link>
-                    </label>
                   </div>
                   <div className="form-control mt-6">
                     <button className="btn btn-primary">Login</button>
                   </div>
-
-                 
-                  
+                  <p className="text-xs text-center sm:px-6 dark:text-gray-400">
+                    Don't have an account? 
+                     <Link
+                      rel="noopener noreferrer"
+                      to="/signup"
+                      className="underline dark:text-gray-100"
+                    > 
+                      Sign up
+                    </Link>
+                  </p>
                 </div>
               </div>
             </div>
