@@ -1,16 +1,15 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Context/UserContext';
 
 const Login = () => {
-  const { login, google } = useContext(AuthContext);
+  const { login, google, github } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const provider = new GoogleAuthProvider();
+  const gProvider = new GoogleAuthProvider();
+  const gitProvider = new GithubAuthProvider();
   const navigate = useNavigate()
-
-
 
   const handleSubmit = event =>{
    event.preventDefault();
@@ -38,7 +37,7 @@ const Login = () => {
    })
   }
   const handleGoogle = () => {
-    google(provider)
+    google(gProvider)
     .then( result =>{
       const user = result.user;
       console.log(user);
@@ -49,6 +48,18 @@ const Login = () => {
       console.error(error);
     })
   };
+  const handleGithub =() =>{
+    github(gitProvider)
+    .then( result =>{
+      const user = result.user;
+      console.log(user);
+      Swal.fire("Good job!", "You have successfully logged in", "success");
+      navigate("/");
+    })
+    .catch( error =>{
+      console.error(error);
+    })
+  }
 
     return (
       <div>
@@ -126,7 +137,7 @@ const Login = () => {
             </svg>
           </button>
 
-          <button aria-label="Log in with GitHub" className="p-3 rounded-sm">
+          <button onClick={handleGithub} aria-label="Log in with GitHub" className="p-3 rounded-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
