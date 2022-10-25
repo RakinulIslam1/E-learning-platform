@@ -8,3 +8,16 @@
     align-items: center;
     margin: 20px;
 }
+@media only screen and (max-width: 600px) {
+    .home{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .lottie{
+   width: 100%;
+    }
+    .ts{
+        font-size: 30px;
+    }
+
+}

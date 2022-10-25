@@ -34,13 +34,14 @@ const Header = () => {
             <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
               Smart learners
             </span>
+            <div className="flex ml-5 lg:hidden items-center">
+              <span>
+                <img className="photo rounded-lg" src={user?.photoURL} alt="" />
+              </span>
+              <span className="ml-2">{user?.displayName}</span>
+            </div>
           </div>
-          <div className="flex ml-5 lg:hidden items-center">
-            <span>
-              <img className="photo rounded-lg" src={user?.photoURL} alt="" />
-            </span>
-            <span className="ml-2">{user?.displayName}</span>
-          </div>
+
           <div className="lg:hidden ml-3">
             {user?.uid ? (
               <button onClick={logout} className="btn btn-outline text-white">

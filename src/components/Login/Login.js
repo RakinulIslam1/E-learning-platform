@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Context/UserContext';
 
@@ -8,6 +8,7 @@ const Login = () => {
   const { login, google } = useContext(AuthContext);
   const [error, setError] = useState("");
   const provider = new GoogleAuthProvider();
+  const navigate = useNavigate()
 
 
 
@@ -16,15 +17,15 @@ const Login = () => {
    const form = event.target;
    const email = form.email.value;
    const password = form.password.value;
-  //  console.log(email, password);
 
-    login(email, password)
+   login(email, password)
     .then((result) => {
      const user = result.user;
      console.log(user);
      form.reset();
      Swal.fire("Good job!", "You have successfully logged in", "success");
      setError("");
+     navigate('/')
    })
    .catch(e =>{
     const errorMessage = e.message;
@@ -41,6 +42,8 @@ const Login = () => {
     .then( result =>{
       const user = result.user;
       console.log(user);
+      Swal.fire("Good job!", "You have successfully logged in", "success");
+       navigate("/");
     })
     .catch(error =>{
       console.error(error);
