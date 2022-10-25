@@ -10,3 +10,7 @@
    color: rgb(28, 164, 209);
    border-bottom: 2px solid rgb(28, 164, 209);
 }
+.photo{
+    width: 45px;
+    border-radius: 100px;
+}
