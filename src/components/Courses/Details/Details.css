@@ -1,6 +1,9 @@
 .dtls{
-    margin: 50px;
-    padding: 20px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 5px;
+    padding: 30px;
     border: 2px solid blue;
     border-radius: 10px;
 }
