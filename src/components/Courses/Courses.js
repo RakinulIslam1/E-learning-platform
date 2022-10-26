@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Carts from './Carts';
 import './Courses.css';
-// import { FaHandPointDown } from "react-icons/fa";
 
 const Courses = () => {
   const [course, setCourse] = useState([]);
@@ -28,7 +27,7 @@ const Courses = () => {
         <div>
           {course.map((c) => (
             <p className="my-6 navs  bg-slate-800" key={c.id}>
-              <Link to={`/sideNav/${c.id}`}>{c.name}</Link>
+              <Link to='/sideNav'>{c.name}</Link>
             </p>
           ))}
         </div>

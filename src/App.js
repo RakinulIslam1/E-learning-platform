@@ -8,6 +8,7 @@ import SideNav from './components/Courses/SideNav';
 import Error from './components/Error/Error';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import PrivateRoutes from './components/PrivateRoutes/PrivateRoutes';
 import Signup from './components/Signup/Signup';
 import Root from './layout/Root';
 
@@ -34,7 +35,6 @@ function App() {
         {
           path: "courses",
           element: <Courses></Courses>,
-          
         },
         {
           path: "blog",
@@ -49,13 +49,18 @@ function App() {
           element: <Signup></Signup>,
         },
         {
-          path: '/sideNav/:id',
-          element: <SideNav></SideNav>
+          path: "sideNav",
+          element: (
+            <PrivateRoutes>
+              <SideNav></SideNav>
+            </PrivateRoutes>
+          ),
+          loader: () => fetch("http://localhost:5000/detials"),
         },
         {
-          path:'/cart/:id',
-          element: <Carts></Carts>
-        }
+          path: "/cart/:id",
+          element: <Carts></Carts>,
+        },
       ],
     },
   ]);

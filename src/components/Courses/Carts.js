@@ -13,7 +13,7 @@ const Carts = ({ detail }) => {
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <div className="card-actions justify-center m-2">
-            <Link >
+            <Link to='/sideNav'>
               <button className="btn btn-primary">Show details</button>
             </Link>
           </div>

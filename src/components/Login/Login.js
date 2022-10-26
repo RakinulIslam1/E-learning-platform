@@ -1,6 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Context/UserContext';
 
@@ -10,6 +10,9 @@ const Login = () => {
   const gProvider = new GoogleAuthProvider();
   const gitProvider = new GithubAuthProvider();
   const navigate = useNavigate()
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = event =>{
    event.preventDefault();
@@ -24,7 +27,7 @@ const Login = () => {
      form.reset();
      Swal.fire("Good job!", "You have successfully logged in", "success");
      setError("");
-     navigate('/')
+     navigate(from, {replace: true});
    })
    .catch(e =>{
     const errorMessage = e.message;
@@ -46,7 +49,7 @@ const Login = () => {
         "You have successfully logged in",
         "success"
       );
-       navigate("/");
+       navigate(from, { replace: true });
     })
     .catch(error =>{
       console.error(error);
@@ -62,7 +65,7 @@ const Login = () => {
         "You have successfully logged in",
         "success"
       );
-      navigate("/");
+      navigate(from, { replace: true });
     })
     .catch( error =>{
       console.error(error);
