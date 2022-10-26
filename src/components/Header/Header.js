@@ -100,6 +100,16 @@ const Header = () => {
                 FAQ
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/faq"
+                aria-label="Blog"
+                title="Blog"
+                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+              >
+                Blog
+              </NavLink>
+            </li>
             {user?.uid ? (
               <button onClick={logout} className="btn btn-outline text-white">
                 Logout
@@ -211,6 +221,16 @@ const Header = () => {
                           class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           FAQ
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          to="/faq"
+                          aria-label="Our product"
+                          title="Blog"
+                          class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          Blog
                         </NavLink>
                       </li>
                       <input type="checkbox" className="toggle bg-white" />
