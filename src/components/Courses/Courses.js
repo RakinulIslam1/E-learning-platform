@@ -21,7 +21,7 @@ const Courses = () => {
   return (
     <div className="display">
       <div className="text-white">
-        <h1 className="text-black text-3xl font-semibold">
+        <h1 className="text-black text-3xl font-semibold txt">
           Click below to see course details
         </h1>
 
