@@ -11,7 +11,6 @@ const PrivateRoutes = ({children}) => {
           <div className="w-16 h-16 my-5 border-4 border-dashed mx-auto rounded-full animate-spin border-x-black border-y-black"></div>
         );
     }
-
       if (!user) {
         return (
           <Navigate to="/login" state={{ from: location }} replace></Navigate>
