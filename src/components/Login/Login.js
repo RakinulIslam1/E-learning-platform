@@ -41,7 +41,11 @@ const Login = () => {
     .then( result =>{
       const user = result.user;
       console.log(user);
-      Swal.fire("Good job!", "You have successfully logged in", "success");
+      Swal.fire(
+        "Congratulations!",
+        "You have successfully logged in",
+        "success"
+      );
        navigate("/");
     })
     .catch(error =>{
@@ -53,7 +57,11 @@ const Login = () => {
     .then( result =>{
       const user = result.user;
       console.log(user);
-      Swal.fire("Good job!", "You have successfully logged in", "success");
+      Swal.fire(
+        "Congratulations!",
+        "You have successfully logged in",
+        "success"
+      );
       navigate("/");
     })
     .catch( error =>{

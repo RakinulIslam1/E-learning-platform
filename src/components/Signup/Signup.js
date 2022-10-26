@@ -22,7 +22,11 @@ const Signup = () => {
       const user = result.user;
       console.log(user);
       form.reset();
-      Swal.fire("Good job!", "You have successfully signed up", "success");
+      Swal.fire(
+        "Congratulations!",
+        "You have successfully signed up",
+        "success"
+      );
       setError('')
       handleProfile(name, photoURL);
       logout();

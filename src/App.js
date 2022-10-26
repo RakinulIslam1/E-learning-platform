@@ -51,6 +51,10 @@ function App() {
         {
           path: '/sideNav/:id',
           element: <SideNav></SideNav>
+        },
+        {
+          path:'/cart/:id',
+          element: <Carts></Carts>
         }
       ],
     },
