@@ -24,22 +24,19 @@ const Courses = () => {
           Click below to see course details
         </h1>
 
-        <div>
+        <div className="stcy">
           {course.map((c) => (
             <p className="my-6 navs  bg-slate-800" key={c.id}>
-              <Link to='/sideNav'>{c.name}</Link>
+              <Link to="/sideNav">{c.name}</Link>
             </p>
           ))}
         </div>
       </div>
 
-      <div className='details'>
-        {
-          details.map(detail => <Carts
-          key={detail._id}
-          detail={detail}
-          ></Carts>)
-        }
+      <div className="details">
+        {details.map((detail) => (
+          <Carts key={detail._id} detail={detail}></Carts>
+        ))}
       </div>
     </div>
   );

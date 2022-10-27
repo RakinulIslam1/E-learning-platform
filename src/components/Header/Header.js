@@ -233,7 +233,10 @@ const Header = () => {
                           Blog
                         </NavLink>
                       </li>
-                      <input type="checkbox" className="toggle bg-white" />
+                      <input
+                        type="checkbox"
+                        className="toggle bg-white"
+                      />
                     </ul>
                   </nav>
                 </div>
