@@ -5,7 +5,7 @@
 - First of all i used react js for to create this website
 - I applied tailwild as a css framwork
 - As i used tailwind here that's why i used to tailwind components like daisyui and Mambaui
-[My website live link:]
+- [My website live link:]
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
